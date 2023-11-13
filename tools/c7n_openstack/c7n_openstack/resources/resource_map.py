@@ -10,4 +10,5 @@ ResourceMap = {
     "openstack.image": "c7n_openstack.resources.server.Image",
     "openstack.secret": "c7n_openstack.resources.secret.Secret",
     "openstack.container": "c7n_openstack.resources.object_storage.Container"
+    "openstack.secret": "c7n_openstack.resources.secret.Secret"
 }
