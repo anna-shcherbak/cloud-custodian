@@ -3,9 +3,7 @@
 #
 from c7n_openstack.query import QueryResourceManager, TypeInfo, DescribeSource
 from c7n_openstack.provider import resources
-# from c7n.filters import ValueFilter
 from c7n.utils import local_session
-# from c7n.utils import type_schema
 
 class ContainerMeta(DescribeSource):
 
