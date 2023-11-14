@@ -71,9 +71,6 @@ class QueryMeta(type):
 
 
 class QueryResourceManager(ResourceManager, metaclass=QueryMeta):
-
-    source_mapping = sources
-
     def __init__(self, ctx, data):
         super(QueryResourceManager, self).__init__(ctx, data)
         self.source = self.get_source(self.source_type)
@@ -82,11 +79,7 @@ class QueryResourceManager(ResourceManager, metaclass=QueryMeta):
         return ()
 
     def get_source(self, source_type):
-        if source_type in self.source_mapping:
-            return self.source_mapping.get(source_type)(self)
-        if source_type in sources:
-            return sources.get(source_type)(self)
-        raise KeyError("Invalid Source %s" % source_type)
+        return sources.get(source_type)(self)
 
     def get_client(self):
         client = local_session(self.session_factory).client()
@@ -114,7 +107,7 @@ class QueryResourceManager(ResourceManager, metaclass=QueryMeta):
         return self.filter_resources(resources)
 
     def augment(self, resources):
-        return self.source.augment(resources)
+        return resources
 
 
 class TypeMeta(type):

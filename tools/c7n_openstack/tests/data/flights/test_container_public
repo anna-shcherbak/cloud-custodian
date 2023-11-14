@@ -2,30 +2,20 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
+      Accept: [application/json]
+      Content-Type: [application/json]
     method: GET
     uri: http://keystone:5000/
   response:
-    body:
-      string: '{"versions": {"values": [{"id": "v3.14", "status": "stable", "updated":
-        "2020-04-07T00:00:00Z", "links": [{"rel": "self", "href": "http://127.0.0.1:5000/v3/"}],
-        "media-types": [{"base": "application/json", "type": "application/vnd.openstack.identity-v3+json"}]}]}}'
+    body: {string: '{"versions": {"values": [{"id": "v3.14", "status": "stable", "updated": "2020-04-07T00:00:00Z", "links": [{"rel": "self", "href": "http://127.0.0.1:5000/v3/"}], "media-types": [{"base": "application/json", "type": "application/vnd.openstack.identity-v3+json"}]}]}}'}
     headers:
-      Content-Type:
-      - application/json
-    status:
-      code: 200
-      message: OK
+      Content-Type: [application/json]
+    status: {code: 200, message: OK}
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
+      Accept: [application/json]
+      Content-Type: [application/json]
     method: POST
     uri: http://keystone:5000/v3/auth/tokens
   response:
@@ -96,9 +86,155 @@ interactions:
         "region": "RegionOne"}], "id": "fc0b9142361f42b988d426a988f06b64", "type":
         "identity", "name": "keystone"}]}}'
     headers:
+      X-Subject-Token: "test-token"
+      Content-Type: [application/json]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Content-Type: [application/json]
+    method: GET
+    uri: http://10.0.2.14:8080/v1/AUTH_314a347c744349479e901e57922b70e5
+  response:
+    body:
+      string: '[{"name": "test1", "count": 2, "bytes": 505, "last_modified": "2023-11-13T09:12:39.030650"},
+        {"name": "test2", "count": 2, "bytes": 1184, "last_modified": "2023-11-13T09:12:48.647700"}]'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '185'
       Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Nov 2023 15:58:19 GMT
+      Vary:
+      - Accept
+      X-Account-Bytes-Used:
+      - '1689'
+      X-Account-Container-Count:
+      - '2'
+      X-Account-Object-Count:
+      - '4'
+      X-Account-Storage-Policy-Policy-0-Bytes-Used:
+      - '1689'
+      X-Account-Storage-Policy-Policy-0-Container-Count:
+      - '2'
+      X-Account-Storage-Policy-Policy-0-Object-Count:
+      - '4'
+      X-Openstack-Request-Id:
+      - tx9fc0959fe9e4420b9378a-006552479b
+      X-Timestamp:
+      - '1699866759.00451'
+      X-Trans-Id:
+      - tx9fc0959fe9e4420b9378a-006552479b
+      x-account-project-domain-id:
+      - default
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Content-Type: [application/json]
+    method: GET
+    uri: http://10.0.2.14:8080/v1/AUTH_314a347c744349479e901e57922b70e5
+  response:
+    body:
+      string: '[{"name": "test1", "count": 2, "bytes": 505, "last_modified": "2023-11-13T09:12:39.030650"},
+        {"name": "test2", "count": 2, "bytes": 1184, "last_modified": "2023-11-13T09:12:48.647700"}]'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '185'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Nov 2023 15:58:19 GMT
+      Vary:
+      - Accept
+      X-Account-Bytes-Used:
+      - '1689'
+      X-Account-Container-Count:
+      - '2'
+      X-Account-Object-Count:
+      - '4'
+      X-Account-Storage-Policy-Policy-0-Bytes-Used:
+      - '1689'
+      X-Account-Storage-Policy-Policy-0-Container-Count:
+      - '2'
+      X-Account-Storage-Policy-Policy-0-Object-Count:
+      - '4'
+      X-Openstack-Request-Id:
+      - txb9c2da80263b45a79334d-006552479b
+      X-Timestamp:
+      - '1699866759.00451'
+      X-Trans-Id:
+      - txb9c2da80263b45a79334d-006552479b
+      x-account-project-domain-id:
+      - default
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
       - application/json
-      X-Subject-Token: test-token
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - openstacksdk/0.52.0 keystoneauth1/5.3.0 python-requests/2.31.0 CPython/3.10.12
+      X-Auth-Token:
+      - gAAAAABlUkebFz9R4L3OqdopuZ20V95MrInuAF41pRo_AOBfBwUz0EHcLXvGRePdg2YWX3hacNXavkLlK7vr89EMbE3ybdACc2nmdEYG3oDgfzMWh1sjVLwNOpth9F2d2t5pLcK4AAu5-MYSEmlenjnJDQYl_62rqMD9ljSYZOJRwvntDRB_EIY
+    method: GET
+    uri: http://10.0.2.14:8080/v1/AUTH_314a347c744349479e901e57922b70e5
+  response:
+    body:
+      string: '[{"name": "test1", "count": 2, "bytes": 505, "last_modified": "2023-11-13T09:12:39.030650"},
+        {"name": "test2", "count": 2, "bytes": 1184, "last_modified": "2023-11-13T09:12:48.647700"}]'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '185'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Nov 2023 15:58:19 GMT
+      Vary:
+      - Accept
+      X-Account-Bytes-Used:
+      - '1689'
+      X-Account-Container-Count:
+      - '2'
+      X-Account-Object-Count:
+      - '4'
+      X-Account-Storage-Policy-Policy-0-Bytes-Used:
+      - '1689'
+      X-Account-Storage-Policy-Policy-0-Container-Count:
+      - '2'
+      X-Account-Storage-Policy-Policy-0-Object-Count:
+      - '4'
+      X-Openstack-Request-Id:
+      - tx6d23718a7a504a2d9e09e-006552479b
+      X-Timestamp:
+      - '1699866759.00451'
+      X-Trans-Id:
+      - tx6d23718a7a504a2d9e09e-006552479b
+      x-account-project-domain-id:
+      - default
     status:
       code: 200
       message: OK
@@ -160,30 +296,20 @@ interactions:
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
+      Accept: [application/json]
+      Content-Type: [application/json]
     method: GET
     uri: http://keystone:5000/
   response:
-    body:
-      string: '{"versions": {"values": [{"id": "v3.14", "status": "stable", "updated":
-        "2020-04-07T00:00:00Z", "links": [{"rel": "self", "href": "http://127.0.0.1:5000/v3/"}],
-        "media-types": [{"base": "application/json", "type": "application/vnd.openstack.identity-v3+json"}]}]}}'
+    body: {string: '{"versions": {"values": [{"id": "v3.14", "status": "stable", "updated": "2020-04-07T00:00:00Z", "links": [{"rel": "self", "href": "http://127.0.0.1:5000/v3/"}], "media-types": [{"base": "application/json", "type": "application/vnd.openstack.identity-v3+json"}]}]}}'}
     headers:
-      Content-Type:
-      - application/json
-    status:
-      code: 200
-      message: OK
+      Content-Type: [application/json]
+    status: {code: 200, message: OK}
 - request:
     body: null
     headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
+      Accept: [application/json]
+      Content-Type: [application/json]
     method: POST
     uri: http://keystone:5000/v3/auth/tokens
   response:
@@ -254,9 +380,171 @@ interactions:
         "region": "RegionOne"}], "id": "fc0b9142361f42b988d426a988f06b64", "type":
         "identity", "name": "keystone"}]}}'
     headers:
-      Content-Type:
+      X-Subject-Token: "test-token"
+      Content-Type: [application/json]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept:
       - application/json
-      X-Subject-Token: test-token
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - openstacksdk/0.52.0 keystoneauth1/5.3.0 python-requests/2.31.0 CPython/3.10.12
+      X-Auth-Token:
+      - gAAAAABlUkebTgRSknF0SFx6-p-KdmPKn3bKtkV3ChuQH8kPMiZlfV_wjvK033DU3t2WfHarVRatapiWWLenrsmy5_BlzGvmEs8OQY3F9Sh97bMqBKjLtTH7n0ESE4kcznZT9O9WdF2XV2dl2y0nsiQWFRYrz7tNittfvNk77caA7kfkMO2Wzcs
+    method: GET
+    uri: http://10.0.2.14:8080/v1/AUTH_314a347c744349479e901e57922b70e5
+  response:
+    body:
+      string: '[{"name": "test1", "count": 2, "bytes": 505, "last_modified": "2023-11-13T09:12:39.030650"},
+        {"name": "test2", "count": 2, "bytes": 1184, "last_modified": "2023-11-13T09:12:48.647700"}]'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '185'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Nov 2023 15:58:19 GMT
+      Vary:
+      - Accept
+      X-Account-Bytes-Used:
+      - '1689'
+      X-Account-Container-Count:
+      - '2'
+      X-Account-Object-Count:
+      - '4'
+      X-Account-Storage-Policy-Policy-0-Bytes-Used:
+      - '1689'
+      X-Account-Storage-Policy-Policy-0-Container-Count:
+      - '2'
+      X-Account-Storage-Policy-Policy-0-Object-Count:
+      - '4'
+      X-Openstack-Request-Id:
+      - tx582cbe74eb13423a80bfc-006552479b
+      X-Timestamp:
+      - '1699866759.00451'
+      X-Trans-Id:
+      - tx582cbe74eb13423a80bfc-006552479b
+      x-account-project-domain-id:
+      - default
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - openstacksdk/0.52.0 keystoneauth1/5.3.0 python-requests/2.31.0 CPython/3.10.12
+      X-Auth-Token:
+      - gAAAAABlUkebTgRSknF0SFx6-p-KdmPKn3bKtkV3ChuQH8kPMiZlfV_wjvK033DU3t2WfHarVRatapiWWLenrsmy5_BlzGvmEs8OQY3F9Sh97bMqBKjLtTH7n0ESE4kcznZT9O9WdF2XV2dl2y0nsiQWFRYrz7tNittfvNk77caA7kfkMO2Wzcs
+    method: GET
+    uri: http://10.0.2.14:8080/v1/AUTH_314a347c744349479e901e57922b70e5
+  response:
+    body:
+      string: '[{"name": "test1", "count": 2, "bytes": 505, "last_modified": "2023-11-13T09:12:39.030650"},
+        {"name": "test2", "count": 2, "bytes": 1184, "last_modified": "2023-11-13T09:12:48.647700"}]'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '185'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Nov 2023 15:58:19 GMT
+      Vary:
+      - Accept
+      X-Account-Bytes-Used:
+      - '1689'
+      X-Account-Container-Count:
+      - '2'
+      X-Account-Object-Count:
+      - '4'
+      X-Account-Storage-Policy-Policy-0-Bytes-Used:
+      - '1689'
+      X-Account-Storage-Policy-Policy-0-Container-Count:
+      - '2'
+      X-Account-Storage-Policy-Policy-0-Object-Count:
+      - '4'
+      X-Openstack-Request-Id:
+      - tx4c533e1b6ed7486b8be57-006552479b
+      X-Timestamp:
+      - '1699866759.00451'
+      X-Trans-Id:
+      - tx4c533e1b6ed7486b8be57-006552479b
+      x-account-project-domain-id:
+      - default
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - openstacksdk/0.52.0 keystoneauth1/5.3.0 python-requests/2.31.0 CPython/3.10.12
+      X-Auth-Token:
+      - gAAAAABlUkebTgRSknF0SFx6-p-KdmPKn3bKtkV3ChuQH8kPMiZlfV_wjvK033DU3t2WfHarVRatapiWWLenrsmy5_BlzGvmEs8OQY3F9Sh97bMqBKjLtTH7n0ESE4kcznZT9O9WdF2XV2dl2y0nsiQWFRYrz7tNittfvNk77caA7kfkMO2Wzcs
+    method: GET
+    uri: http://10.0.2.14:8080/v1/AUTH_314a347c744349479e901e57922b70e5
+  response:
+    body:
+      string: '[{"name": "test1", "count": 2, "bytes": 505, "last_modified": "2023-11-13T09:12:39.030650"},
+        {"name": "test2", "count": 2, "bytes": 1184, "last_modified": "2023-11-13T09:12:48.647700"}]'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '185'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Nov 2023 15:58:19 GMT
+      Vary:
+      - Accept
+      X-Account-Bytes-Used:
+      - '1689'
+      X-Account-Container-Count:
+      - '2'
+      X-Account-Object-Count:
+      - '4'
+      X-Account-Storage-Policy-Policy-0-Bytes-Used:
+      - '1689'
+      X-Account-Storage-Policy-Policy-0-Container-Count:
+      - '2'
+      X-Account-Storage-Policy-Policy-0-Object-Count:
+      - '4'
+      X-Openstack-Request-Id:
+      - tx19993ccbe55a45838cab9-006552479b
+      X-Timestamp:
+      - '1699866759.00451'
+      X-Trans-Id:
+      - tx19993ccbe55a45838cab9-006552479b
+      x-account-project-domain-id:
+      - default
     status:
       code: 200
       message: OK
@@ -312,6 +600,61 @@ interactions:
     body: null
     headers:
       Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - openstacksdk/0.52.0 keystoneauth1/5.3.0 python-requests/2.31.0 CPython/3.10.12
+      X-Auth-Token:
+      - gAAAAABlUkebTgRSknF0SFx6-p-KdmPKn3bKtkV3ChuQH8kPMiZlfV_wjvK033DU3t2WfHarVRatapiWWLenrsmy5_BlzGvmEs8OQY3F9Sh97bMqBKjLtTH7n0ESE4kcznZT9O9WdF2XV2dl2y0nsiQWFRYrz7tNittfvNk77caA7kfkMO2Wzcs
+    method: GET
+    uri: http://10.0.2.14:8080/v1/AUTH_314a347c744349479e901e57922b70e5
+  response:
+    body:
+      string: '[{"name": "test1", "count": 2, "bytes": 505, "last_modified": "2023-11-13T09:12:39.030650"},
+        {"name": "test2", "count": 2, "bytes": 1184, "last_modified": "2023-11-13T09:12:48.647700"}]'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '185'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 13 Nov 2023 15:58:19 GMT
+      Vary:
+      - Accept
+      X-Account-Bytes-Used:
+      - '1689'
+      X-Account-Container-Count:
+      - '2'
+      X-Account-Object-Count:
+      - '4'
+      X-Account-Storage-Policy-Policy-0-Bytes-Used:
+      - '1689'
+      X-Account-Storage-Policy-Policy-0-Container-Count:
+      - '2'
+      X-Account-Storage-Policy-Policy-0-Object-Count:
+      - '4'
+      X-Openstack-Request-Id:
+      - txf380858e574d41f89ca38-006552479b
+      X-Timestamp:
+      - '1699866759.00451'
+      X-Trans-Id:
+      - txf380858e574d41f89ca38-006552479b
+      x-account-project-domain-id:
+      - default
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
       - '*/*'
       Accept-Encoding:
       - gzip, deflate
@@ -358,43 +701,4 @@ interactions:
     status:
       code: 204
       message: No Content
-- request:
-    body: null
-    headers:
-      Accept:
-      - application/json
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - openstacksdk/0.52.0 keystoneauth1/5.3.0 python-requests/2.31.0 CPython/3.10.12
-    method: GET
-    uri: http://10.0.2.14:8080/v1/AUTH_314a347c744349479e901e57922b70e5
-  response:
-    body:
-      string: <html><h1>Unauthorized</h1><p>This server could not verify that you
-        are authorized to access the document you requested.</p></html>
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '131'
-      Content-Type:
-      - text/html; charset=UTF-8
-      Date:
-      - Tue, 14 Nov 2023 09:30:36 GMT
-      WWW-Authenticate:
-      - Swift realm="AUTH_314a347c744349479e901e57922b70e5"
-      - Keystone uri="http://10.0.2.14/identity"
-      Www-Authenticate:
-      - Swift realm="AUTH_314a347c744349479e901e57922b70e5"
-      - Keystone uri="http://10.0.2.14/identity"
-      X-Openstack-Request-Id:
-      - tx43651dd32f274d3ab4869-0065533e3c
-      X-Trans-Id:
-      - tx43651dd32f274d3ab4869-0065533e3c
-    status:
-      code: 401
-      message: Unauthorized
 version: 1
